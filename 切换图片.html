@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{width: 200px;height: 200px;}
+		</style>
+	</head>
+	<body>
+		<!--<img src="img/bn4.jpg" alt="" onmouseover="this.src='img/bn4-1.jpg'" onmouseout="this.src='img/bn4.jpg'"/>-->
+		
+		<img src="img/bn4.jpg"  onmouseout="sout(this)" onmouseover="show(this)"/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function show(obj){
+				
+				var sge=$(obj).attr('src');
+				
+				var s=sge.split('.');
+				var n=s[0]+'-1'+'.'+s[1];
+				$(obj).attr('src',n);
+			}
+			
+			function sout(obj){
+				
+				var sge=$(obj).attr('src');
+				
+				var s=sge.split('.');
+				var n=s[0].split('-');
+				var p=n[0]+'.'+s[1];
+				
+				$(obj).attr('src',p);
+			}
+		</script>
+	</body>
+</html>
